@@ -32,8 +32,7 @@ function convertirFichier() {
             console.error(err);
             return;
             }
-        });
-      
+        });  
 }
 
 function pressePapier() {
