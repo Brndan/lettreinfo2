@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' 'unsafe-eval';" />
+  </head>
+  <body>
+    <h1>Hello World!</h1>
+    We are using node <script>document.write(process.versions.node)</script>,
+    Chrome <script>document.write(process.versions.chrome)</script>,
+    and Electron <script>document.write(process.versions.electron)</script>.
+    <input type="button" name="TrouveFichier" id="parcourir" value="Parcourir" onclick="recupfichier()">
+    <input type="text" name="UrlFichier" id="urlFichier" disabled>
+    <input type="button" name="ConvertitFichier" id="convertir" value="Convertir" onclick="convertirFichier()">
+    <textarea id="afficheHtml" name="afficheHtml" rows="30" cols="40" readonly></textarea>
+    <input type="button" name="copier" id="copier" value="Copier" onclick="pressePapier()">
+  </body>
+  <script src="./renderer.js"></script>
+</html>
