@@ -14,21 +14,26 @@ function recupfichier() {
     document.getElementById("urlFichier").disabled = true
 }
 
+
 function convertirFichier() {
     const fs = require('fs')
+    let cheminSortie = process.cwd() + '/' + 'lettreexport.html'
     let cheminFichier = document.getElementById("urlFichier").value
+    console.log(cheminFichier)
     let contenuFichier = null
-    fs.readFile(cheminFichier, 'utf8', (err, contenuFichier) => {
+    contenuFichier = fs.readFileSync(cheminFichier, 'utf8')
+    contenuFichier = minifie(contenuFichier)
+    contenuFichier = supprimeTrackers(contenuFichier)
+    document.getElementById("afficheHtml").readonly = false
+    document.getElementById("afficheHtml").textContent = contenuFichier
+    document.getElementById("afficheHtml").readonly = false
+    fs.writeFile(cheminSortie, contenuFichier, (err) => {
         if (err) {
-          console.error(err)
-          return
-        }
-        contenuFichier = minifie(contenuFichier)
-        contenuFichier = supprimeTrackers(contenuFichier)
-        document.getElementById("afficheHtml").readonly = false
-        document.getElementById("afficheHtml").textContent = contenuFichier
-        document.getElementById("afficheHtml").readonly = false
-      })
+            console.error(err);
+            return;
+            }
+        });
+      
 }
 
 function pressePapier() {
