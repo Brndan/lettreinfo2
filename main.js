@@ -20,6 +20,9 @@ function createWindow () {
   // Ouvre les DevTools.
   //win.webContents.openDevTools()
 
+  // supprime le menu
+  win.removeMenu()
+
   // Émis lorsque la fenêtre est fermée.
   win.on('closed', () => {
     // Dé-référence l'objet window , normalement, vous stockeriez les fenêtres
