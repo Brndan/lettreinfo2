@@ -2,9 +2,7 @@ const { remote } = require('electron')
 const { dialog } = require('electron').remote
 
 function recupFichier() {
-    let pathFile = 'essai'
-    alert('pathFile')
-    pathFile = dialog.showOpenDialogSync(remote.getCurrentWindow(), {
+    let pathFile = dialog.showOpenDialogSync(remote.getCurrentWindow(), {
         properties: ['openFile'],
         filters: [
             { name: 'HTML', extensions: ['html', 'xhtml'] }
@@ -21,7 +19,6 @@ function convertirFichier() {
     const fs = require('fs')
     let cheminSortie = process.cwd() + '/lettreexport.html'
     let cheminFichier = document.getElementById("urlFichier").value
-    console.log(cheminFichier)
     let contenuFichier = null
     contenuFichier = fs.readFileSync(cheminFichier, 'utf8')
     contenuFichier = minifie(contenuFichier)
