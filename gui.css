@@ -1,0 +1,31 @@
+#contenu {
+    display: grid;
+    grid-template-areas: "sortie sortie fichiers fichiers fichiers"
+                         "sortie sortie boutons dragndrop dragndrop"
+                         "sortie sortie boutons dragndrop dragndrop"
+                         "sortie sortie boutons . ."
+                         "sortie sortie boutons . .";
+    grid-template-columns: 20vw 1fr 1fr 1fr 1fr;
+    grid-template-rows: 5vh 1fr 1fr 1fr 1fr;
+    
+}
+
+#contenu > #sortie {
+    grid-area: sortie;
+    background-color: #8ca0ff;
+}
+
+#contenu > #fichiers{
+    grid-area: fichiers;
+    background-color: brown;
+}
+
+#contenu > #boutons {
+    grid-area: boutons;
+    background-color: chartreuse;
+}
+
+#contenu > #dragndrop {
+    grid-area: dragndrop;
+    background-color: coral;
+}

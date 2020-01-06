@@ -5,15 +5,24 @@
   <title>Lettreinfo</title>
   <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
   <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' 'unsafe-eval';" />
+  <link rel="stylesheet" type="text/css" href="gui.css">
 </head>
 <body>
   <div id="contenu">
-    <input type="button" name="TrouveFichier" id="parcourir" value="Parcourir" onclick="recupfichier()">
-    <input type="text" name="UrlFichier" id="urlFichier" placeholder="Cliquez sur Parcourir" disabled>
-    <input type="button" name="ConvertitFichier" id="convertir" value="Convertir" onclick="convertirFichier()">
-    <textarea id="afficheHtml" name="afficheHtml" rows="30" cols="40" readonly></textarea>
-    <input type="button" name="copier" id="copier" value="Copier" onclick="pressePapier()">
-    <input type="button" name="apropos" id="apropos" value="À propos" onclick="aPropos()">
+    <div id="sortie">
+      <textarea id="afficheHtml" name="afficheHtml" readonly></textarea>
+    </div>
+    <div id="fichiers">
+      <input type="button" name="TrouveFichier" id="parcourir" value="Parcourir" onclick="recupFichier()">
+      <input type="text" name="urlFichier" id="urlFichier" placeholder="Cliquez sur Parcourir" disabled>
+    </div>
+    <div id="boutons">
+      <input type="button" name="ConvertitFichier" id="convertir" value="Convertir" onclick="convertirFichier()">
+      <input type="button" name="copier" id="copier" value="Copier" onclick="pressePapier()">
+      <input type="button" name="apropos" id="apropos" value="À propos" onclick="aPropos()">
+    </div>
+    <div id="dragndrop"></div>
+    
   </div>
 </body>
 <script src="./renderer.js"></script>

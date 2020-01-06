@@ -1,23 +1,25 @@
 const { remote } = require('electron')
 const { dialog } = require('electron').remote
 
-function recupfichier() {
-
-    let uriFichier = dialog.showOpenDialogSync(remote.getCurrentWindow(), {
+function recupFichier() {
+    let pathFile = 'essai'
+    alert('pathFile')
+    pathFile = dialog.showOpenDialogSync(remote.getCurrentWindow(), {
         properties: ['openFile'],
         filters: [
             { name: 'HTML', extensions: ['html', 'xhtml'] }
         ]
     })
     document.getElementById("urlFichier").disabled = false
-    document.getElementById("urlFichier").value = uriFichier[0]
+    document.getElementById("urlFichier").value = pathFile[0]
     document.getElementById("urlFichier").disabled = true
 }
 
 
+
 function convertirFichier() {
     const fs = require('fs')
-    let cheminSortie = process.cwd() + '/' + 'lettreexport.html'
+    let cheminSortie = process.cwd() + '/lettreexport.html'
     let cheminFichier = document.getElementById("urlFichier").value
     console.log(cheminFichier)
     let contenuFichier = null
