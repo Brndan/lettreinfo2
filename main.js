@@ -18,7 +18,7 @@ function createWindow () {
   win.loadFile('index.html')
 
   // Ouvre les DevTools.
-  //win.webContents.openDevTools()
+  win.webContents.openDevTools()
 
   // supprime le menu
   win.removeMenu()

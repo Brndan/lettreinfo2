@@ -34,3 +34,7 @@ body, html {
     grid-area: dragndrop;
     background-color: coral;
 }
+
+ #boutons input {
+     display: block;
+ }
