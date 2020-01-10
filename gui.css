@@ -2,6 +2,11 @@ body, html {
     height: 100%;
     margin: 0px;
 }
+
+body {
+    background: linear-gradient(to bottom right, #073642, #586e75);
+}
+
 #contenu {
     height: 100%;
     display: grid;
@@ -17,17 +22,19 @@ body, html {
 
 #contenu > #sortie {
     grid-area: sortie;
-    background-color: #8ca0ff;
 }
 
 #contenu > #fichiers{
     grid-area: fichiers;
+    /*justify-self: center;*/
+    align-self: center;
     background-color: brown;
 }
 
 #contenu > #boutons {
     grid-area: boutons;
     background-color: chartreuse;
+    margin: auto;
 }
 
 #contenu > #dragndrop {
@@ -38,3 +45,19 @@ body, html {
  #boutons input {
      display: block;
  }
+
+ #sortie > textarea {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    resize: none;
+    background-color: inherit;
+    color: white;
+    opacity: 0.5;
+    border-style: none;
+ }
+
+#sortie > textarea:focus {
+    outline: none;
+}
+
