@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <title>Lettreinfo</title>
@@ -7,6 +8,7 @@
   <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' 'unsafe-eval';" />
   <link rel="stylesheet" type="text/css" href="gui.css">
 </head>
+
 <body>
   <div id="contenu">
     <div id="sortie">
@@ -16,14 +18,15 @@
       <input type="button" name="TrouveFichier" id="parcourir" value="Parcourir" onclick="recupFichier()">
       <input type="text" name="urlFichier" id="urlFichier" placeholder="Cliquez sur Parcourir" disabled>
     </div>
-    <div id="boutons">
-      <input type="button" name="ConvertitFichier" id="convertir" value="Convertir" onclick="convertirFichier()">
-      <input type="button" name="copier" id="copier" value="Copier" onclick="pressePapier()">
-      <input type="button" name="apropos" id="apropos" value="À propos" onclick="aPropos()">
+    <div id="boutonsActions">
+      <input type="button" name="ConvertitFichier" id="convertir" class="boutons" value="Convertir" onclick="convertirFichier()">
+      <input type="button" name="copier" id="copier" value="Copier" class="boutons" onclick="pressePapier()">
+      <input type="button" name="apropos" id="apropos" value="À propos" class="boutons" onclick="aPropos()">
     </div>
     <div id="dragndrop"></div>
-    
+
   </div>
 </body>
 <script src="./renderer.js"></script>
+
 </html>

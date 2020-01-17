@@ -1,5 +1,6 @@
 const { remote } = require('electron')
 const { dialog } = require('electron').remote
+const ipc = electron.ipcRenderer
 
 function recupFichier() {
     let pathFile = dialog.showOpenDialogSync(remote.getCurrentWindow(), {
@@ -69,3 +70,4 @@ Electron ${process.versions.electron}
     document.getElementById("afficheHtml").textContent = versionLettreinfo
     document.getElementById("afficheHtml").readonly = false
 }
+

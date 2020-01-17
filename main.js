@@ -1,4 +1,5 @@
 const { app, BrowserWindow } = require('electron')
+const ipc = require('electron').ipcMain
 
 // Gardez une reference globale de l'objet window, si vous ne le faites pas, la fenetre sera
 // fermee automatiquement quand l'objet JavaScript sera garbage collected.
@@ -55,3 +56,4 @@ app.on('activate', () => {
 })
 
 // Dans ce fichier, vous pouvez inclure le reste de votre code spécifique au processus principal. Vous pouvez également le mettre dans des fichiers séparés et les inclure ici.
+
