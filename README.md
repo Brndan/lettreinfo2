@@ -23,5 +23,5 @@ L’application est construite en JS avec le framework Electron.
 - installer le framework Electron
 - pour produire un exécutable, installer tous les modules avec `npm install` à la racine du projet.
 
-
+Pour construire les exécutables, utiliser `npm run dist`. La commande est produite dans le fichier package.json. Options importantes : -l -m -w construisent pour linux, mac, windows respectivement.
 
