@@ -10,6 +10,7 @@ function createWindow () {
   win = new BrowserWindow({
     width: 800,
     height: 600,
+    icon: __dirname + "static/icon.png",
     webPreferences: {
       nodeIntegration: true
     }
@@ -19,7 +20,7 @@ function createWindow () {
   win.loadFile('index.html')
 
   // Ouvre les DevTools.
-  win.webContents.openDevTools()
+  //win.webContents.openDevTools()
 
   // supprime le menu
   win.removeMenu()
