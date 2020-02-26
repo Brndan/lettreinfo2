@@ -7,6 +7,10 @@ body {
     background: linear-gradient(to bottom right, #073642, #586e75);
 }
 
+#fichiers {
+    margin-bottom: 2%;
+}
+
 #contenu {
     height: 100%;
     display: grid;
@@ -30,14 +34,25 @@ body {
 }
 
 #urlFichier {
-    width: 70%;
-    float: right;
-    margin-right: 10px;
+/*     max-width: 90%; */
+    float: left;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: auto;
+    color: grey;
+    background: whitesmoke;
+    border: none;
+    border-radius: 1.5em;
+    padding: 10px;
+    margin-top: 1em;
+    transition-duration: 0.4s;
+    font-size: 14pt;
 }
 
 #parcourir {
     float:right;
-    margin-right: 5%;
+    margin-right: 2%;
+    margin-top: auto;
 }
 
 
@@ -50,7 +65,7 @@ body {
 
 #contenu > #dragndrop {
     grid-area: dragndrop;
-    background-color: coral;
+/*     background-color: coral; */
 }
 
  #boutonsActions > input {
@@ -90,4 +105,32 @@ body {
 
 .boutons:focus {
     outline: none;
+}
+
+#parcourir {
+    color: white;
+    background: red;
+    border: none;
+    border-radius: 1.5em;
+    padding: 10px;
+    margin-top: 1em;
+    transition-duration: 0.4s;
+    font-size: 14pt;
+}
+
+#parcourir:hover {
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 1);
+}
+
+#parcourir:focus {
+    outline: none;
+}
+
+#dragndrop > img {
+    object-fit: scale-down;
+    max-height: 90%;
+    margin-top: 3%;
+    margin-left: 1%;
+
 }

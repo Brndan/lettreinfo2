@@ -11,6 +11,8 @@ function recupFichier() {
     })
     document.getElementById("urlFichier").disabled = false
     document.getElementById("urlFichier").value = pathFile[0]
+    document.getElementById("urlFichier").style.border = "thin solid green"
+    document.getElementById("urlFichier").style.color = green
     document.getElementById("urlFichier").disabled = true
 }
 
@@ -61,7 +63,7 @@ function minifie(contenuFichier) {
 }
 
 function aPropos() {
-    versionLettreinfo = `Lettreinfo version 2.01
+    versionLettreinfo = `Lettreinfo version 2.02
 Node.js ${process.versions.node}
 Chrome ${process.versions.chrome}
 Electron ${process.versions.electron}
