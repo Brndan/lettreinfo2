@@ -1,26 +1,32 @@
 {
    "name": "Lettreinfo2",
-   "version": "2.0.4",
-   "description": "Convertir la lettre éléctronique fédérale",
+   "version": "2.0.5",
+   "description": "Convertir la lettre électronique fédérale",
    "homepage": "./",
    "main": "main.js",
    "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1",
       "start": "electron .",
-      "dist": "electron-builder -lwm"
+      "dist": "electron-builder -l"
    },
    "author": "SUD éducation",
    "license": "ISC",
    "devDependencies": {
-      "clean-css": "^4.2.1",
+      "clean-css": "^4.2.3",
       "electron": "^7.1.7",
       "electron-builder": "^22.3.2",
       "electron-packager": "^14.2.1",
       "html-minifier": "^4.0.0",
       "string-strip-html": "^4.3.12"
    },
+   "dependencies": {
+      "clean-css": "^4.2.3",
+      "html-minifier": "^4.0.0",
+      "string-strip-html": "^4.3.12"
+   },
    "build": {
       "appId": "com.electron.lettreinfo",
+      "asar": false,
       "linux": {
          "target": "appImage"
       },
