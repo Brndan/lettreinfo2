@@ -45,11 +45,11 @@ function pressePapier() {
 
 function supprimeTrackers(contenuFichier) {
     const stripHtml = require("string-strip-html");
-    contenuFichier = stripHtml(contenuFichier, { onlyStripTags: ["script", "meta"], stripTogetherWithTheirContents: ["script"] })
-    contenuFichier = contenuFichier.replace(/<title>.*title>/, "<title>Lettre de SUD éducation</title>")
+    contenuFichier = stripHtml(contenuFichier, { onlyStripTags: ["script", "meta", "title"], stripTogetherWithTheirContents: ["script","title"] })
+    //contenuFichier = contenuFichier.replace(/<title>.*title>/, "<title>Lettre de SUD éducation</title>")
     contenuFichier = contenuFichier.replace(/<link.*archivebar-desktop.*$/m, "")
     //contenuFichier = contenuFichier.replace(/<.?doctype.*>/i,"")
-    contenuFichier = contenuFichier.replace(/<a.*Voir ce mail dans votre navigateur<\/a>/, '<a href="https://www.sudeducation.org/-La-lettre-d-info-.html" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #656565;font-weight: normal;text-decoration: underline;')
+    //contenuFichier = contenuFichier.replace(/<a.*Voir ce mail dans votre navigateur<\/a>/, '<a href="https://www.sudeducation.org/-La-lettre-d-info-.html" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #656565;font-weight: normal;text-decoration: underline;')
     return contenuFichier
 }
 
@@ -63,7 +63,7 @@ function minifie(contenuFichier) {
 }
 
 function aPropos() {
-    versionLettreinfo = `Lettreinfo version 2.02
+    versionLettreinfo = `Lettreinfo version 2.0.4
 Node.js ${process.versions.node}
 Chrome ${process.versions.chrome}
 Electron ${process.versions.electron}
