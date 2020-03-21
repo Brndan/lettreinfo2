@@ -1,13 +1,13 @@
 {
    "name": "Lettreinfo2",
-   "version": "2.0.5",
+   "version": "2.0.6",
    "description": "Convertir la lettre électronique fédérale",
    "homepage": "./",
    "main": "main.js",
    "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1",
       "start": "electron .",
-      "dist": "electron-builder -lmw"
+      "dist": "electron-builder -wl"
    },
    "author": "SUD éducation",
    "license": "ISC",
@@ -34,7 +34,7 @@
          "target": "portable"
       },
       "mac": {
-         "target": "zip"
+         "target": "dmg"
       }
    }
 }

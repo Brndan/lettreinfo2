@@ -13,7 +13,7 @@ Lettreinfo2 est un logiciel qui permet de supprimer les trackers d’une lettre 
 2. Cliquer sur `Parcourir` et sélectionner le fichier html récupéré de Mailchimp.
 3. Cliquer sur `Convertir`
 4. Dans la partie gauche de la fenêtre le code de la lettre s’affiche. On peut le copier dans le presse-papier en utilisant le bouton `Copier`.
-5. Un fichier `lettreexport.html` contenant la lettre modifiée est créé dans le même répertoire que là où se trouve le dossier où se trouve le programme.
+5. Un fichier `lettreexport.html` contenant la lettre modifiée est créé sur le bureau.
 
 ## Construction de l’application
 

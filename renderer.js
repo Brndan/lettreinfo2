@@ -1,5 +1,6 @@
 const { remote } = require('electron')
 const { dialog } = require('electron').remote
+const {app} = require('electron').remote
 
 const ipc = electron.ipcRenderer
 
@@ -21,7 +22,7 @@ function recupFichier() {
 
 function convertirFichier() {
     const fs = require('fs')
-    let cheminSortie = process.cwd() + '/lettreexport.html'
+    let cheminSortie = app.getPath('desktop') + '/lettreexport.html'
     let cheminFichier = document.getElementById("urlFichier").value
     let contenuFichier = null
     contenuFichier = fs.readFileSync(cheminFichier, 'utf8')
@@ -30,6 +31,7 @@ function convertirFichier() {
     document.getElementById("afficheHtml").readonly = false
     document.getElementById("afficheHtml").textContent = contenuFichier
     document.getElementById("afficheHtml").readonly = false
+    
     fs.writeFile(cheminSortie, contenuFichier, (err) => {
         if (err) {
             console.error(err);
@@ -64,7 +66,7 @@ function minifie(contenuFichier) {
 }
 
 function aPropos() {
-    versionLettreinfo = `Lettreinfo version 2.0.5
+    versionLettreinfo = `Lettreinfo version 2.0.6
 Node.js ${process.versions.node}
 Chrome ${process.versions.chrome}
 Electron ${process.versions.electron}
