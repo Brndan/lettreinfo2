@@ -2,8 +2,6 @@ const { remote } = require('electron')
 const { dialog } = require('electron').remote
 const {app} = require('electron').remote
 
-const ipc = electron.ipcRenderer
-
 function recupFichier() {
     let pathFile = dialog.showOpenDialogSync(remote.getCurrentWindow(), {
         properties: ['openFile'],
@@ -47,11 +45,15 @@ function pressePapier() {
 }
 
 function supprimeTrackers(contenuFichier) {
+    // Retire les balises HTML spécifiées 
     const stripHtml = require("string-strip-html");
     contenuFichier = stripHtml(contenuFichier, { onlyStripTags: ["script", "meta", "title"], stripTogetherWithTheirContents: ["script","title"] })
-    //contenuFichier = contenuFichier.replace(/<title>.*title>/, "<title>Lettre de SUD éducation</title>")
+    // Retire la Google bar
     contenuFichier = contenuFichier.replace(/<link.*archivebar-desktop.*$/m, "")
-    //contenuFichier = contenuFichier.replace(/<.?doctype.*>/i,"")
+    // Retire la mention MC_PREVIEW_TEXT qui est lue par les clients de messagerie
+    contenuFichier = contenuFichier.replace(/<span class="mcnPreviewText.*<\/span>/,"")
+    // Restaure l'encodage UTF-8 pour faciliter le visionnage dans un navigateur
+    contenuFichier = contenuFichier.replace(/<\/head>/,'<meta charset="utf-8"/></head>')
     //contenuFichier = contenuFichier.replace(/<a.*Voir ce mail dans votre navigateur<\/a>/, '<a href="https://www.sudeducation.org/-La-lettre-d-info-.html" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #656565;font-weight: normal;text-decoration: underline;')
     return contenuFichier
 }
@@ -66,7 +68,7 @@ function minifie(contenuFichier) {
 }
 
 function aPropos() {
-    versionLettreinfo = `Lettreinfo version 2.0.6
+    versionLettreinfo = `Lettreinfo version 2.0.7
 Node.js ${process.versions.node}
 Chrome ${process.versions.chrome}
 Electron ${process.versions.electron}
