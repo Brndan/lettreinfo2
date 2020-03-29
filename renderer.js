@@ -68,7 +68,7 @@ function minifie(contenuFichier) {
 }
 
 function aPropos() {
-    versionLettreinfo = `Lettreinfo version 2.0.8
+    versionLettreinfo = `Lettreinfo version 2.0.9
 Node.js ${process.versions.node}
 Chrome ${process.versions.chrome}
 Electron ${process.versions.electron}
