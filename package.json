@@ -1,6 +1,6 @@
 {
    "name": "Lettreinfo2",
-   "version": "2.0.7",
+   "version": "2.0.9",
    "description": "Convertir la lettre électronique fédérale",
    "homepage": "./",
    "main": "main.js",
