@@ -62,13 +62,22 @@ function minifie(contenuFichier) {
     const CleanCSS = require('clean-css');
     const minify = require('html-minifier').minify;
     contenuFichier = minify(contenuFichier, {
-        minifyCSS: true,
+        minifyCSS: false,
+        collapseWhitespace: true,
+        conservativeCollapse: true,
+        removeStyleLinkTypeAttributes: true,
+        processConditionalComments: false,
+        collapseBooleanAttributes: true,
+        removeAttributeQuotes: true,
+        removeTagWhitespace: true,
+        removeComments: true,
+        
     });
     return contenuFichier
 }
 
 function aPropos() {
-    versionLettreinfo = `Lettreinfo version 2.0.9
+    versionLettreinfo = `Lettreinfo version 2.0.10
 Node.js ${process.versions.node}
 Chrome ${process.versions.chrome}
 Electron ${process.versions.electron}
