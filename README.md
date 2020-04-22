@@ -25,3 +25,9 @@ L’application est construite en JS avec le framework Electron.
 
 Pour construire les exécutables, utiliser `npm run dist`. La commande est produite dans le fichier package.json. Options importantes : -l -m -w construisent pour linux, mac, windows respectivement.
 
+
+
+## Particularité Thunderbird
+
+
+
