@@ -10,7 +10,7 @@ Lettreinfo2 est un logiciel qui permet de supprimer les trackers d’une lettre 
 ## Usage
 
 1. Ouvrir l’application par un double clic.
-2. Cliquer sur `Parcourir` et sélectionner le fichier html récupéré de Mailchimp.
+2. Cliquer sur `Parcourir` et sélectionner le fichier HTML récupéré de Mailchimp.
 3. Cliquer sur `Convertir`
 4. Dans la partie gauche de la fenêtre le code de la lettre s’affiche. On peut le copier dans le presse-papier en utilisant le bouton `Copier`.
 5. Un fichier `lettreexport.html` contenant la lettre modifiée est créé sur le bureau.
@@ -27,7 +27,10 @@ Pour construire les exécutables, utiliser `npm run dist`. La commande est produ
 
 
 
-## Particularité Thunderbird
+## Particularité de Thunderbird
 
 
 
+Par défaut, Thunderbird produit parfois un e-mail plus lourd en encodant le HTML inséré en base64, ce qui conduit à accroître la taille du message de 25 à 30%.
+
+Pour corriger ce problème, il faut modifier l’option de configuration de Thunderbird : `mail.strictly_mime` en lui donnant la valeur `true`.
