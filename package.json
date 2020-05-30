@@ -25,7 +25,8 @@
       "appId": "com.electron.lettreinfo",
       "asar": true,
       "linux": {
-         "target": "appImage"
+         "target": "snap",
+         "target": "AppImage"
       },
       "win": {
          "target": "portable"
