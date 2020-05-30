@@ -1,6 +1,6 @@
 const { remote } = require('electron')
 const { dialog } = require('electron').remote
-const {app} = require('electron').remote
+const { app } = require('electron').remote
 
 function recupFichier() {
     let pathFile = dialog.showOpenDialogSync(remote.getCurrentWindow(), {
@@ -29,7 +29,7 @@ function convertirFichier() {
     document.getElementById("afficheHtml").readonly = false
     document.getElementById("afficheHtml").textContent = contenuFichier
     document.getElementById("afficheHtml").readonly = false
-    
+
     fs.writeFile(cheminSortie, contenuFichier, (err) => {
         if (err) {
             console.error(err);
@@ -47,13 +47,15 @@ function pressePapier() {
 function supprimeTrackers(contenuFichier) {
     // Retire les balises HTML spécifiées 
     const stripHtml = require("string-strip-html");
-    contenuFichier = stripHtml(contenuFichier, { onlyStripTags: ["script", "meta", "title"], stripTogetherWithTheirContents: ["script","title"] })
+    contenuFichier = stripHtml(contenuFichier, { onlyStripTags: ["script", "meta", "title"], stripTogetherWithTheirContents: ["script", "title"] })
     // Retire la Google bar
     contenuFichier = contenuFichier.replace(/<link.*archivebar-desktop.*$/m, "")
     // Retire la mention MC_PREVIEW_TEXT qui est lue par les clients de messagerie
-    contenuFichier = contenuFichier.replace(/<span class="mcnPreviewText.*<\/span>/,"")
+    contenuFichier = contenuFichier.replace(/<span class="mcnPreviewText.*<\/span>/, "")
+    // Retire <!doctype html>
+    contenuFichier = contenuFichier.replace(/<!doctype html>/, "")
     // Restaure l'encodage UTF-8 pour faciliter le visionnage dans un navigateur
-    contenuFichier = contenuFichier.replace(/<\/head>/,'<meta charset="utf-8"/></head>')
+    contenuFichier = contenuFichier.replace(/<\/head>/, '<meta charset="utf-8"/></head>')
     //contenuFichier = contenuFichier.replace(/<a.*Voir ce mail dans votre navigateur<\/a>/, '<a href="https://www.sudeducation.org/-La-lettre-d-info-.html" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #656565;font-weight: normal;text-decoration: underline;')
     return contenuFichier
 }
@@ -71,7 +73,7 @@ function minifie(contenuFichier) {
         removeAttributeQuotes: true,
         removeTagWhitespace: true,
         removeComments: true,
-        
+
     });
     return contenuFichier
 }
