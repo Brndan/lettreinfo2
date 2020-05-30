@@ -4,12 +4,13 @@ const ipc = require('electron').ipcMain
 // Garder une référence globale de l'objet window pour éviter le garbage collect.
 let win
 
-function createWindow () {
+function createWindow() {
   // Créer le browser window.
   win = new BrowserWindow({
     width: 800,
     height: 600,
-    icon: __dirname + "static/icon.png",
+    icon: "static/sud.png",
+    //icon: __dirname + "static/sud.png",
     webPreferences: {
       nodeIntegration: true
     }
