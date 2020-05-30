@@ -12,14 +12,14 @@
    "author": "SUD éducation",
    "license": "ISC",
    "devDependencies": {
-      "electron": "^8.2.0",
-      "electron-builder": "^22.4.1",
+      "electron": "^8.3.0",
+      "electron-builder": "^22.7.0",
       "electron-packager": ">=14.2.1"
    },
    "dependencies": {
       "clean-css": ">=4.2.3",
       "html-minifier": ">=4.0.0",
-      "string-strip-html": "^4.3.18"
+      "string-strip-html": "^4.4.7"
    },
    "build": {
       "appId": "com.electron.lettreinfo",
