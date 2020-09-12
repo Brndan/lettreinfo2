@@ -12,20 +12,19 @@
    "author": "SUD éducation",
    "license": "ISC",
    "devDependencies": {
-      "electron": "^8.3.0",
-      "electron-builder": "^22.7.0",
-      "electron-packager": ">=14.2.1"
+      "electron": "^8.5.1",
+      "electron-builder": "^22.8.0",
+      "electron-packager": "^15.1.0"
    },
    "dependencies": {
       "clean-css": ">=4.2.3",
       "html-minifier": ">=4.0.0",
-      "string-strip-html": "^4.4.7"
+      "string-strip-html": "^4.5.1"
    },
    "build": {
       "appId": "com.electron.lettreinfo",
       "asar": true,
       "linux": {
-         "target": "snap",
          "target": "AppImage"
       },
       "win": {
