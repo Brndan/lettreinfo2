@@ -1,6 +1,7 @@
 const { remote } = require('electron')
-const { dialog } = require('electron').remote
-const { app } = require('electron').remote
+const { dialog, app } = remote;
+//const { dialog } = require('electron').remote
+//const { app } = require('electron').remote
 
 function recupFichier() {
     let pathFile = dialog.showOpenDialogSync(remote.getCurrentWindow(), {
@@ -47,7 +48,7 @@ function pressePapier() {
 function supprimeTrackers(contenuFichier) {
     // Retire les balises HTML spécifiées 
     const stripHtml = require("string-strip-html");
-    contenuFichier = stripHtml(contenuFichier, { onlyStripTags: ["html","script", "meta", "title"], stripTogetherWithTheirContents: ["script", "title"] })
+    contenuFichier = stripHtml(contenuFichier, { onlyStripTags: ["html","script", "meta", "title"], stripTogetherWithTheirContents: ["script", "title"] }).result
     // Retire la Google bar
     contenuFichier = contenuFichier.replace(/<link.*archivebar-desktop.*$/m, "")
     // Retire la mention MC_PREVIEW_TEXT qui est lue par les clients de messagerie
@@ -79,7 +80,7 @@ function minifie(contenuFichier) {
 }
 
 function aPropos() {
-    versionLettreinfo = `Lettreinfo version 2.0.10
+    versionLettreinfo = `Lettreinfo version 2.1.0
 Node.js ${process.versions.node}
 Chrome ${process.versions.chrome}
 Electron ${process.versions.electron}

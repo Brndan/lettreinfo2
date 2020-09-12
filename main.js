@@ -1,5 +1,5 @@
 const { app, BrowserWindow } = require('electron')
-const ipc = require('electron').ipcMain
+const { ipcMain } = require('electron')
 
 // Garder une référence globale de l'objet window pour éviter le garbage collect.
 let win
@@ -12,7 +12,8 @@ function createWindow() {
     icon: "static/sud.png",
     //icon: __dirname + "static/sud.png",
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
+      enableRemoteModule: true
     }
   })
 
@@ -20,7 +21,7 @@ function createWindow() {
   win.loadFile('index.html')
 
   // Ouvre les DevTools.
-  //win.webContents.openDevTools()
+  win.webContents.openDevTools()
 
   // supprime le menu
   win.removeMenu()
