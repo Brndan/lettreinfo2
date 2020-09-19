@@ -48,7 +48,7 @@ function pressePapier() {
 function supprimeTrackers(contenuFichier) {
     // Retire les balises HTML spécifiées 
     const stripHtml = require("string-strip-html");
-    contenuFichier = stripHtml(contenuFichier, { onlyStripTags: ["html","script", "meta", "title"], stripTogetherWithTheirContents: ["script", "title"] }).result
+    contenuFichier = stripHtml(contenuFichier, { onlyStripTags: ["html", "script", "meta", "title"], stripTogetherWithTheirContents: ["script", "title"] }).result
     // Retire la Google bar
     contenuFichier = contenuFichier.replace(/<link.*archivebar-desktop.*$/m, "")
     // Retire la mention MC_PREVIEW_TEXT qui est lue par les clients de messagerie
